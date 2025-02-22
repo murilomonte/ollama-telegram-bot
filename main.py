@@ -9,11 +9,18 @@ from telegram.ext import (
     filters,
     ContextTypes,
 )
-
+import json
 from ai import get_response
 
-TOKEN: Final = "5850775739:AAHQJ39gxuCq4f1YMMuEdbkz4LOXaDr-7d8"
-BOT_USERNAME: Final = "@MissLunaa_bot"
+with open('config.json', 'r') as config:
+    data = json.load(config)
+    token = data['bot_token']
+    name = data['bot_name']
+
+print(data)
+
+TOKEN: Final = token
+BOT_USERNAME: Final = name
 
 
 ## Commands
